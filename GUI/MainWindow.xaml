@@ -1,0 +1,155 @@
+﻿<Window
+    x:Class="Aeries.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:Aeries"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="MainWindow"
+    Width="804"
+    Height="450"
+    mc:Ignorable="d">
+    <Grid>
+        <RichTextBox x:Name="logBox" Margin="29,47,247,28">
+            <FlowDocument>
+                <Paragraph>
+                    <Run Text="RichTextBox" />
+                </Paragraph>
+            </FlowDocument>
+        </RichTextBox>
+        <Label
+            x:Name="uLabel"
+            Margin="573,50,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Userlist" />
+        <Label
+            Margin="575,113,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Passlist" />
+        <RadioButton
+            x:Name="rbtn1"
+            Margin="591,15,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Checked="RadioButton_Checked"
+            Content="Single User"
+            IsChecked="False" />
+        <RadioButton
+            x:Name="rbtn2"
+            Margin="687,15,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Checked="RadioButton_Checked_1"
+            Content="User List" />
+        <Button
+            x:Name="ulistBtn"
+            Width="78"
+            Height="22"
+            Margin="688,43,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Click="ulistBtn_Click"
+            Content="Select" />
+        <Button
+            x:Name="passBtn"
+            Width="78"
+            Height="20"
+            Margin="688,109,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Click="passBtn_Click"
+            Content="Select" />
+        <TextBox
+            x:Name="userTextBox"
+            Width="212"
+            Margin="570,69,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Text="TextBox"
+            TextWrapping="Wrap" />
+        <TextBox
+            x:Name="passTextBox"
+            Width="212"
+            Margin="570,135,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Text="TextBox"
+            TextWrapping="Wrap" />
+        <Label
+            Margin="576,181,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="IPList" />
+        <Button
+            x:Name="ipBtn"
+            Width="78"
+            Height="20"
+            Margin="688,177,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Click="Button_Click"
+            Content="Select" />
+        <TextBox
+            x:Name="ipTextBox"
+            Width="212"
+            Margin="571,202,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Text="TextBox"
+            TextWrapping="Wrap" />
+        <Button
+            Width="142"
+            Margin="603,259,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Click="Button_Click_1"
+            Content="Start Checking" />
+        <Label
+            Margin="594,340,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Errors: " />
+        <Label
+            x:Name="sLabel"
+            Margin="594,315,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Successful: " />
+        <Label
+            x:Name="errNum"
+            Margin="667,340,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="" />
+        <Label
+            x:Name="sNum"
+            Margin="667,315,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="" />
+        <Label
+            Margin="594,364,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Wrong Pass: " />
+        <Label
+            x:Name="wpCount"
+            Margin="666,364,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="" />
+        <Label
+            Margin="594,389,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="No Connect: " />
+        <Label
+            x:Name="cncCount"
+            Margin="665,389,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="" />
+    </Grid>
+</Window>
