@@ -167,31 +167,36 @@ namespace Aeries
                 Port = 22;
             else
                 Port = Convert.ToInt32(port);
-
-            try
+            string[] ipAddr = File.ReadAllLines(ip); 
+            foreach (string _ip in ipAddr)
             {
-                TcpClient sh = new TcpClient();
-                sh.Connect(ip, Port);
-            }
-            catch (Exception ex)
-            {
-                if (ex.ToString().Contains("10061"))
+                try
                 {
-                    Console.WriteLine("Port " + port + " of IP " + ip + " is closed.");
-                    Environment.Exit(0);
+                
+                        TcpClient sh = new TcpClient();
+                        sh.Connect(_ip, Port);
                 }
-                else if (ex.ToString().Contains("11001"))
+                catch (Exception ex)
                 {
-                    Console.WriteLine("The host " + ip + " does not exist. Canceling attack...");
-                    Environment.Exit(0);
-                }
-                else if (ex.ToString().Contains("10060"))
-                {
-                    Console.WriteLine("The port" + port + " is not in service. Do you want to try anyway? [y/n]");
-                    string resp = Console.ReadLine();
-                    if (resp == "n")
+                    if (ex.ToString().Contains("10061"))
+                    {
+                        Console.WriteLine("Port " + port + " of IP " + ip + " is closed.");
                         Environment.Exit(0);
+                    }
+                    else if (ex.ToString().Contains("11001"))
+                    {
+                        Console.WriteLine("The host " + ip + " does not exist. Canceling attack...");
+                        Environment.Exit(0);
+                    }
+                    else if (ex.ToString().Contains("10060"))
+                    {
+                        Console.WriteLine("The port" + port + " is not in service. Do you want to try anyway? [y/n]");
+                        string resp = Console.ReadLine();
+                        if (resp == "n")
+                            Environment.Exit(0);
+                    }
                 }
+
             }
         }
         private static void DefineAttack(List<string> list,int thread)
